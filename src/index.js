@@ -45,7 +45,7 @@ function getNavigationPage() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloudflare Worker 导航页面</title>
+    <title>Cloudflare Worker 导航页面，有问题反馈加我vx：chiyan2024</title>
     <style>
         * {
             margin: 0;
