@@ -13,20 +13,24 @@ export default {
 		const url = new URL(request.url);
 		const path = url.pathname;
 
-		// 路由处理
+		// 路由处理 - 根据请求路径分发到不同的处理逻辑
 		switch (path) {
+			// 首页路由 - 返回导航页面HTML
 			case '/':
 				return new Response(getNavigationPage(), {
 					headers: { 'Content-Type': 'text/html; charset=utf-8' }
 				});
+			// API接口路由 - 返回JSON格式的问候消息
 			case '/api/hello':
 				return new Response(JSON.stringify({ message: 'Hello from API!' }), {
 					headers: { 'Content-Type': 'application/json' }
 				});
+			// 关于页面路由 - 返回项目介绍页面HTML
 			case '/about':
 				return new Response(getAboutPage(), {
 					headers: { 'Content-Type': 'text/html; charset=utf-8' }
 				});
+			// 默认路由 - 处理未匹配的路径，返回404错误
 			default:
 				return new Response('404 Not Found', { status: 404 });
 		}
